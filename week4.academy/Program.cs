@@ -1,29 +1,47 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using LearnCSharp.Library;
 
-namespace week4.academy
+namespace LearnCSharp.Cmd
 {
     public class Program
     {
-       public static void Main()
+        public static void Main()
         {
-            //int i = 9;
-            //int j = 10;
-            //int result = i + j;
+            //var words = "Hello World";
 
-            Figure o = new Figure() { X = 100 };
+            var employees = new Employee[]
+            {
+                new Employee(){ FullName = "Warren Buffet"},
+                new Employee(){ FullName = "Steve Jobs"},
+                new Employee{ FullName ="Bill Gates"}
+            };
 
-            Figure o2 = new Figure() { X = 123 };
-            //Figure plus = o == o2;
-            bool isEqual = o == o2;
-            bool isEqual2 = o2 >= o;
-            //Figure o3 = new Figure() { X = 10 };
+            var employees2 = new Employee[]
+            {
+                new Employee(){ FullName = "Jim Ovia"},
+                new Employee(){ FullName = "Aliko Dangote"},
+                new Employee(){ FullName ="Mike Adenuga"}
+            };
 
-            //Figure o4 = new Figure() { X = 20 };
+            var staffs = new Staffs(employees);
+            var staffs2 = new Staffs(employees2);
 
-            //Figure plus = o + (o2 + o3) - o4;
-            //plus++;
-            //bool isEqual = o == o2;
-            Console.WriteLine(isEqual2);
+
+            foreach (var item in staffs)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("========");
+            foreach (var item in staffs2)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.ReadLine();
+            Console.WriteLine("Press enter to exit");
 
         }
     }
